@@ -158,7 +158,7 @@
 // let b1 = new BootleMaker("coca cola", 60, false);
 
 
-//! Access modifiers Public, Private and Protected 
+//! Access modifiers Public, Private and Protected
 
 // class BottleMaker {
 //     private halwa: string = "halwa";
@@ -209,15 +209,76 @@
 //?Poora code is liay nahi likha q k ismian bas itni si baat hai k agr ham chahtay hain k hamaray poory code ya class main koi aik esa variable ho jiski value kabhi change na ho to tab ham us variably k access modifier chahay wo public,private ya proteted ho to usmain hamain us variable k saath "readonly" likhna parta hai
 
 
-//! Optional Parameters main just jo field like kuch users agr na dena chahatay hon to ham usmain : sy phely ? mark laga dety hain kuch is tarah  
-//?public gender ?: string 
+//! Optional Parameters main just jo field like kuch users agr na dena chahatay hon to ham usmain : sy phely ? mark laga dety hain kuch is tarah
+//?public gender ?: string
 
 
 //! Paramter Properties :- sy muraad hai k class main alag sy variales declare krny ki bajay aur unhain phir constructor main "this." laga k value assign krnyki bajaye direct acces modifier k saath constructor main hi initialize kra dena. jo k ooper bhi kafi baar ho chuka hai.
 
 
+// ! Getter & Setter
+// class User {
+//     constructor(public _name: string, public age: number) { }
+
+//     get name() {
+//         return this._name;
+//     }
+
+//     set name(value: string) {
+//         this._name = value
+//     }
+// }
+
+// let u1 = new User("Moeen", 21);
+
+
+// ! Static  Members :-  those properties or methods which we want that either we create an insteance of particular class or not should be accesible for this we apply static keyword infront of a variable
+
+// class Static {
+//    static testScore = 1;
+//    static getRandomScore(){
+//         return Math.floor(Math.random()*1000);
+//     }
+// }
+//     Static.getRandomScore();
+//     Static.testScore
+
+
+// ! Abstract classes and methods :- Hiding un-necessary details
 
 
 
 
+// ! Functions in TS + Functions Types
+// function test(name: string, age: number, cbFunc: (value: string) => void) { } //* That's all about a function along with its types and callback inside it in the "TS".
+// test("Moeen", 21, (value) => {
+//     console.log(value);
+// })
 
+
+// ! Optional and default params already discussed above in the classes constructors.
+
+
+//! Rest Params:- ismian basically ham spread operator ka use krty hain like buhut saray arguents ko jo aik function main use ho rahay hon unko aik "array" main return karta hai.
+
+// function sum(...val: number[]): void {
+//     console.log(val);
+// }
+
+// sum(1, 2, 3, 5, 56, 7, 8, 85, 4, 3)
+
+
+
+// ! Generics in TS
+// ? In Funcs
+// ? In Interfaces
+// ? In classes
+
+
+//! 1.
+// function test<T>(value: T) { //todo: generic basically function ko use krty waqt define krny ka naam hai k ham apnay variables ko kia data type assign krna chahtay hain 
+//     console.log(value);
+// }
+// test(1); //? aur call krty waqt agr ham na bhi chahain to fragment laganay ki zaroorat nahi hai k ham yahan batain k kia type hai q k TypeScript khud bakhud infer kr leti hai k kis kis type ki value enter ki hai.
+
+//! 2.
