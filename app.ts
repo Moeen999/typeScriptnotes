@@ -281,4 +281,32 @@
 // }
 // test(1); //? aur call krty waqt agr ham na bhi chahain to fragment laganay ki zaroorat nahi hai k ham yahan batain k kia type hai q k TypeScript khud bakhud infer kr leti hai k kis kis type ki value enter ki hai.
 
-//! 2.
+//! 2. 
+// interface Box<T> { //todo: generics basically interface ko use krty waqt batanay ka tareeqa hai
+    // value: T;      //todo: k ham is property ka type kia rakhna chahtay hain (baad mein decide hota hai)
+// }
+
+// const numBox: Box<number> = { value: 10 }; 
+//? yahan ham ny interface ko call krty waqt type bataya k value number hogi
+
+// const strBox: Box<string> = { value: "Hello" }; 
+//? aur yahan ham ny string type dia so ab value string hi hogi
+
+//! 3.
+// class Container<T> { //todo: generic class ka matlab hai k class ko banaty waqt type fix nahi hota
+    // item: T;         //todo: type baad mein pass hota hai jab class ka object banta hai
+
+    // constructor(item: T) {
+        // this.item = item; //todo: constructor bhi wahi type accept karega jo object banate waqt diya hoga
+    // }
+
+    // show() {
+        // console.log(this.item); //? TypeScript khud infer kr leta hai k is item ka type kia hai
+    // }
+// }
+
+// const c1 = new Container<number>(100); 
+//? yahan class ko use krty waqt type number diya to ab item sirf number hoga
+
+// const c2 = new Container<string>("SphereTalk"); 
+//? yahan type string diya to item string hi rahega
