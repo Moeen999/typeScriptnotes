@@ -276,37 +276,60 @@
 
 
 //! 1.
-// function test<T>(value: T) { //todo: generic basically function ko use krty waqt define krny ka naam hai k ham apnay variables ko kia data type assign krna chahtay hain 
+// function test<T>(value: T) { //todo: generic basically function ko use krty waqt define krny ka naam hai k ham apnay variables ko kia data type assign krna chahtay hain
 //     console.log(value);
 // }
 // test(1); //? aur call krty waqt agr ham na bhi chahain to fragment laganay ki zaroorat nahi hai k ham yahan batain k kia type hai q k TypeScript khud bakhud infer kr leti hai k kis kis type ki value enter ki hai.
 
-//! 2. 
+//! 2.
 // interface Box<T> { //todo: generics basically interface ko use krty waqt batanay ka tareeqa hai
-    // value: T;      //todo: k ham is property ka type kia rakhna chahtay hain (baad mein decide hota hai)
+// value: T;      //todo: k ham is property ka type kia rakhna chahtay hain (baad mein decide hota hai)
 // }
 
-// const numBox: Box<number> = { value: 10 }; 
+// const numBox: Box<number> = { value: 10 };
 //? yahan ham ny interface ko call krty waqt type bataya k value number hogi
 
-// const strBox: Box<string> = { value: "Hello" }; 
+// const strBox: Box<string> = { value: "Hello" };
 //? aur yahan ham ny string type dia so ab value string hi hogi
 
 //! 3.
 // class Container<T> { //todo: generic class ka matlab hai k class ko banaty waqt type fix nahi hota
-    // item: T;         //todo: type baad mein pass hota hai jab class ka object banta hai
+// item: T;         //todo: type baad mein pass hota hai jab class ka object banta hai
 
-    // constructor(item: T) {
-        // this.item = item; //todo: constructor bhi wahi type accept karega jo object banate waqt diya hoga
-    // }
-
-    // show() {
-        // console.log(this.item); //? TypeScript khud infer kr leta hai k is item ka type kia hai
-    // }
+// constructor(item: T) {
+// this.item = item; //todo: constructor bhi wahi type accept karega jo object banate waqt diya hoga
 // }
 
-// const c1 = new Container<number>(100); 
+// show() {
+// console.log(this.item); //? TypeScript khud infer kr leta hai k is item ka type kia hai
+// }
+// }
+
+// const c1 = new Container<number>(100);
 //? yahan class ko use krty waqt type number diya to ab item sirf number hoga
 
-// const c2 = new Container<string>("SphereTalk"); 
+// const c2 = new Container<string>("SphereTalk");
 //? yahan type string diya to item string hi rahega
+
+
+
+// ! Type Assertion
+//? Type Casting:- It could be Implicit or explicit no need of example here as it is very minor and basic thing
+//? Non-Null Typer Assertion:- applying not operator to make sure that the particular variable is not of type null or undefined 
+// let a: null | undefined | number;
+// a! =    12;
+
+
+//! Type Guards
+// ? ye neechay dia gaya function type narrowing ka example hai type guards main
+// function testing(arg: string | number) {
+    // if (typeof arg === "string") {
+        // arg.//? yahan pe TS ko pata chal gaya k arg string hai isliye ab hum string ki methods use kar sakty hain
+    // }else if (typeof arg === "number") {
+        // arg.//? yahan pe TS ko pata chal gaya k arg number hai isliye ab hum number ki methods use kar sakty hain
+//     }
+//     else {throw new Error("pagal ho gaya hai kia");}
+// }
+// testing("Moeen");
+// testing(21);
+//! The End <3 😊
